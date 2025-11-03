@@ -1,0 +1,35 @@
+* criando projeto
+```
+npm create vite@5.5.2 todo-react 
+```
+
+* ref.: 
+```
+https://alunos.fullstackclub.com.br/area/produto/item/5175249
+```
+
+#### TailwindCSS
+##### 1. passo
+```
+npm install tailwindcss @tailwindcss/vite
+```
+
+##### 2. passo vite.config.js
+```
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})
+```
+
+##### index.css
+```
+@import "tailwindcss";
+```
