@@ -4,6 +4,8 @@ import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 
 function App() {
+
+  /** Carrega todas as tarefas */
   const [tasks, setTasks] = useState([
     { 
       id: 1, 
@@ -24,11 +26,30 @@ function App() {
       isCompleted: true 
     },
   ]);
+
+  /** Muda Status uma tarefa */
+  function onTaskClick(taskId){
+    const newTask = tasks.map(task => {
+      if(task.id === taskId){
+        return { ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      // não modifica a tarefa
+      return task;
+    })
+    setTasks(newTask);
+  }
+
   return (
-    <div className='h-screen w-screen bg-slate-950 text-white'>
-      <h1>Gerenciador de Tarefas</h1>
-      <AddTask />
-      <Tasks tasks={tasks} />
+    <div className='h-screen w-screen bg-slate-950 text-white' >
+      
+      <div className='flex justify-center items-center w-xl mx-auto pt-10'>
+        <h1 className='text-xl text-center p-2'>Gerenciador de Tarefas</h1>
+        <AddTask  />
+      </div>
+
+      <Tasks tasks={tasks} onTaskClick={onTaskClick} />
     </div>
   )
 }

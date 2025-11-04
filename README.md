@@ -1,12 +1,10 @@
-* criando projeto
+
+### criando projeto
 ```
 npm create vite@5.5.2 todo-react 
 ```
 
-* ref.: 
-```
-https://alunos.fullstackclub.com.br/area/produto/item/5175249
-```
+<img src="./preview/home-todo.png" alt="" />
 
 #### TailwindCSS
 ##### 1. passo
@@ -32,4 +30,10 @@ export default defineConfig({
 ##### index.css
 ```
 @import "tailwindcss";
+```
+
+
+* ref.: 
+```
+https://alunos.fullstackclub.com.br/area/produto/item/5175249
 ```
