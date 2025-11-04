@@ -23,7 +23,7 @@ function App() {
       id: 3, 
       title: 'Estudar TypeScript', 
       description: 'Estudar React', 
-      isCompleted: true 
+      isCompleted: false
     },
   ]);
 
@@ -41,15 +41,23 @@ function App() {
     setTasks(newTask);
   }
 
+  function toogleCompleted(id){
+    const newTask = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+      return task; // não modifica a tarefa
+    })
+    setTasks(newTask);
+  }
+
   return (
     <div className='h-screen w-screen bg-slate-950 text-white' >
-      
       <div className='flex justify-center items-center w-xl mx-auto pt-10'>
         <h1 className='text-xl text-center p-2'>Gerenciador de Tarefas</h1>
         <AddTask  />
       </div>
-
-      <Tasks tasks={tasks} onTaskClick={onTaskClick} />
+      <Tasks tasks={tasks} toogleCompleted={toogleCompleted} />
     </div>
   )
 }
