@@ -1,5 +1,5 @@
 
-### criando projeto
+### Criando App Todo Compoments com JSX + TailwindCSS
 ```
 npm create vite@5.5.2 todo-react 
 ```
@@ -31,7 +31,6 @@ export default defineConfig({
 ```
 @import "tailwindcss";
 ```
-
 
 * ref.: 
 ```

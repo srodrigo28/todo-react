@@ -5,7 +5,7 @@ import AddTask from './components/AddTask';
 
 function App() {
 
-  /** Carrega todas as tarefas */
+  /** Carrega Tarefas */
   const [tasks, setTasks] = useState([
     { 
       id: 1, 
@@ -40,6 +40,12 @@ function App() {
     })
     setTasks(newTask);
   }
+
+  /** Conta total de Tarefas */
+
+  /** Conta Tarefas Concluidas */
+
+  /** Conta Tarefas não Concluidas */
 
   function toogleCompleted(id){
     const newTask = tasks.map(task => {
