@@ -32,7 +32,9 @@ export default defineConfig({
 @import "tailwindcss";
 ```
 
-* ref.: 
+* ref.: start no minuto 15h
+* duvida editar 58:30
+* duvida editar 1:06 -- inciando form-add
 ```
 https://alunos.fullstackclub.com.br/area/produto/item/5175249
 ```

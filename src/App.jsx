@@ -41,11 +41,28 @@ function App() {
     setTasks(newTask);
   }
 
-  /** Conta total de Tarefas */
+  /** apagar uma tarefa*/
+  function onDeleteTask(taskId){
+    const newTask = tasks.filter(
+      task => task.id !== taskId
+    );
+    alert('Tarefa apagada com sucesso!' + taskId);
+    setTasks(newTask);
+  }
 
-  /** Conta Tarefas Concluidas */
-
-  /** Conta Tarefas não Concluidas */
+  /** Adiciona uma nova tarefa */
+  function addTask(taskId){
+    const newTask = tasks.map(task => {
+      if(task.id === taskId){
+        return { ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      // não modifica a tarefa
+      return task;
+    })
+    setTasks(newTask);
+  }
 
   function toogleCompleted(id){
     const newTask = tasks.map(task => {
@@ -57,13 +74,23 @@ function App() {
     setTasks(newTask);
   }
 
+  /** Conta total de Tarefas */
+
+  /** Conta Tarefas Concluidas */
+
+  /** Conta Tarefas não Concluidas */
+
   return (
     <div className='h-screen w-screen bg-slate-950 text-white' >
       <div className='flex justify-center items-center w-xl mx-auto pt-10'>
         <h1 className='text-xl text-center p-2'>Gerenciador de Tarefas</h1>
         <AddTask  />
       </div>
-      <Tasks tasks={tasks} toogleCompleted={toogleCompleted} />
+      <Tasks 
+        tasks={tasks} 
+        onDeleteTask={onDeleteTask}
+        toogleCompleted={toogleCompleted}
+      />
     </div>
   )
 }
